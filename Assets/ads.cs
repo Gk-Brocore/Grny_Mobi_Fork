@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Advertisements;
 
-public class ads : MonoBehaviour, IUnityAdsListener
+public class ads : MonoBehaviour
 {
 
     string gameId = "3653578";
@@ -13,15 +13,15 @@ public class ads : MonoBehaviour, IUnityAdsListener
     // Initialize the Ads listener and service:
     void Start()
     {
-        Advertisement.AddListener(this);
-        Advertisement.Initialize(gameId, testMode);
+        //Advertisement.AddListener(this);
+        //Advertisement.Initialize(gameId, testMode);
     }
 
-
+/*
     // Implement IUnityAdsListener interface methods:
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        // Define conditional logic for each ad completion status:
+     *//*   // Define conditional logic for each ad completion status:
         if (showResult == ShowResult.Finished)
         {
             // Reward the user for watching the ad to completion.
@@ -33,12 +33,12 @@ public class ads : MonoBehaviour, IUnityAdsListener
         else if (showResult == ShowResult.Failed)
         {
             Debug.LogWarning("The ad did not finish due to an error.");
-        }
+        }*//*
     }
-
+*/
     public void OnUnityAdsReady(string placementId)
     {
-        // If the ready Placement is rewarded, show the ad:
+        /*// If the ready Placement is rewarded, show the ad:
         if (showAdBool == true)
         {
             if (placementId == myPlacementId)
@@ -47,7 +47,7 @@ public class ads : MonoBehaviour, IUnityAdsListener
                 
                 showAdBool = false;
             }
-        }
+        }*/
     }
 
     public void OnUnityAdsDidError(string message)

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Advertisements;
 
-public class GameControll : MonoBehaviour, IUnityAdsListener
+public class GameControll : MonoBehaviour
 {
 
     [Header("General parameters")]
@@ -126,8 +126,8 @@ public class GameControll : MonoBehaviour, IUnityAdsListener
 
     private void Start()
     {
-        Advertisement.AddListener(this);
-        Advertisement.Initialize(gameId, testMode);
+       // Advertisement.AddListener(this);
+        //Advertisement.Initialize(gameId, testMode);
 
         ShowAd();
 
@@ -890,7 +890,7 @@ public class GameControll : MonoBehaviour, IUnityAdsListener
     }
 
 
-    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+  /*  public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
         // Define conditional logic for each ad completion status:
         if (showResult == ShowResult.Finished)
@@ -905,14 +905,14 @@ public class GameControll : MonoBehaviour, IUnityAdsListener
         {
             Debug.LogWarning("The ad did not finish due to an error.");
         }
-    }
+    }*/
 
     public void ShowAd()
     {
-        if (Advertisement.IsReady())
+      /*  if (Advertisement.IsReady())
         {
             Advertisement.Show();
-        }
+        }*/
     }
 
     public void OnUnityAdsReady(string placementId)
@@ -922,7 +922,7 @@ public class GameControll : MonoBehaviour, IUnityAdsListener
             // If the ready Placement is rewarded, show the ad:
             if (placementId == myPlacementId)
             {
-                Advertisement.Show(myPlacementId);
+               // Advertisement.Show(myPlacementId);
                 showAdBool = false;
             }
         }
